@@ -4,8 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PlayerFax – Off-Field Facts for On-Field Decisions</title>
-<link rel="icon" href="PLAYERFAX-mark.png" type="image/png" />
-<link rel="apple-touch-icon" href="PLAYERFAX-mark.png" />
 
 <!-- ============================================================
      PLAYERFAX LANDING PAGE
@@ -58,7 +56,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 200;
-    padding: 1.1rem 2.5rem;
+    padding: 0.75rem 2.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,13 +66,14 @@
     border-bottom: 0.5px solid var(--border);
   }
 
-  /* LOGO — full wordmark: PLAYERFAX.png; icon-only mark: PLAYERFAX-mark.png */
+  /* LOGO — swap img src to change logo file */
   .nav-logo img {
-    height: 36px;
-    width: auto;
-    max-width: min(55vw, 280px);
-    object-fit: contain;
+    height: 88px;
     display: block;
+  }
+
+  @media (max-width: 640px) {
+    .nav-logo img { height: 66px; }
   }
 
   /* Fallback text logo if image not found */
@@ -123,7 +122,7 @@
     padding: 0.5rem 0;
     overflow: hidden;
     white-space: nowrap;
-    margin-top: 62px; /* height of fixed nav */
+    margin-top: 112px; /* height of fixed nav */
   }
 
   .ticker-inner {
@@ -701,21 +700,6 @@
     text-align: center;
   }
 
-  .footer-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .footer-mark {
-    height: 32px;
-    width: auto;
-    display: block;
-    object-fit: contain;
-  }
-
   .footer-logo {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
@@ -723,6 +707,7 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--text);
+    margin-bottom: 0.6rem;
     display: block;
   }
 
@@ -739,8 +724,8 @@
      RESPONSIVE
      ===================== */
   @media (max-width: 640px) {
-    nav { padding: 0.9rem 1.25rem; }
-    .nav-logo img { height: 30px; max-width: min(62vw, 240px); }
+    nav { padding: 0.6rem 1.25rem; }
+    .ticker-wrap { margin-top: 88px; }
     .nav-right a:not(.btn-nav) { display: none; }
     .input-row { grid-template-columns: 1fr; }
     .callout { padding: 2rem 1.5rem; gap: 2rem; }
@@ -759,10 +744,11 @@
 <nav>
   <div class="nav-logo">
     <!-- 
-      Full wordmark: PLAYERFAX.png (same folder as this file). Icon-only asset: PLAYERFAX-mark.png (favicon + footer).
-      On Windows, PLAYERFAX.png may be the same file as playerfax.png — replace either with your horizontal export.
+      LOGO IMAGE: Place your PLAYERFAX.png in the same folder as this HTML file
+      then this img tag will display it automatically.
+      To use a different logo file, change the src below.
     -->
-    <img src="PLAYERFAX.png" alt="PlayerFax" onerror="this.style.display='none'; document.querySelector('.nav-logo-fallback').style.display='block';" />
+    <img src="playerfax-logo.png" alt="PlayerFax" onerror="this.style.display='none'; document.querySelector('.nav-logo-fallback').style.display='block';" />
     <span class="nav-logo-fallback" style="display:none;">Player<span>Fax</span></span>
   </div>
   <div class="nav-right">
@@ -998,23 +984,17 @@
   <div class="founder-row">
     <div class="founder-id">
       <div class="founder-avatar">
-        <!--
-          HEADSHOT: To add your photo, save it as "headshot.jpg" in the same
-          folder as this HTML file and uncomment the line below:
-          <img src="headshot.jpg" alt="Founder" />
-        -->
-        PF
+        <img src="founder-headshot.png" alt="Founder" />
       </div>
       <div class="founder-meta">
         <!-- UPDATE: Replace with your actual name -->
         <h4>Founder &amp; CEO</h4>
-        <p>Director of Football Analytics</p>
-        <p class="school">University of South Carolina</p>
+        <p>Former Director of Football Analytics</p>
       </div>
     </div>
 
     <div class="founder-quote">
-      Built on experience at Memphis, Tennessee, Southern Miss, Marshall, Michigan (2× Big Ten Championships), and Purdue — nine years inside college football at every level. PlayerFax exists because the problem is real, the data is scattered, and the cost of bad information is too high.
+      Built on experience at Memphis, Tennessee, Southern Miss, Marshall, Michigan (2× Big Ten Championships), Purdue and South Carolina — nine years inside college football at every level. PlayerFax exists because the problem is real, the data is scattered, and the cost of bad information is too high.
     </div>
   </div>
 </div>
@@ -1035,11 +1015,11 @@
      FOOTER
      ===================== -->
 <footer>
-  <!-- Wordmark text below; icon mark: PLAYERFAX-mark.png -->
-  <div class="footer-brand">
-    <img class="footer-mark" src="PLAYERFAX-mark.png" alt="" />
-    <span class="footer-logo">Player<span>Fax</span></span>
-  </div>
+  <!--
+    FOOTER LOGO: same as nav — displays PLAYERFAX.png if present,
+    falls back to text logo automatically.
+  -->
+  <span class="footer-logo">Player<span>Fax</span></span>
   <p>© 2025 PlayerFax. All rights reserved.</p>
   <p>Off-Field Facts for On-Field Decisions</p>
 </footer>
