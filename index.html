@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PlayerFax – Off-Field Facts for On-Field Decisions</title>
+<link rel="icon" href="PLAYERFAX-mark.png" type="image/png" />
+<link rel="apple-touch-icon" href="PLAYERFAX-mark.png" />
 
 <!-- ============================================================
      PLAYERFAX LANDING PAGE
@@ -66,9 +68,12 @@
     border-bottom: 0.5px solid var(--border);
   }
 
-  /* LOGO — swap img src to change logo file */
+  /* LOGO — full wordmark: PLAYERFAX.png; icon-only mark: PLAYERFAX-mark.png */
   .nav-logo img {
     height: 36px;
+    width: auto;
+    max-width: min(55vw, 280px);
+    object-fit: contain;
     display: block;
   }
 
@@ -696,6 +701,21 @@
     text-align: center;
   }
 
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-mark {
+    height: 32px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+
   .footer-logo {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
@@ -703,7 +723,6 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--text);
-    margin-bottom: 0.6rem;
     display: block;
   }
 
@@ -721,6 +740,7 @@
      ===================== */
   @media (max-width: 640px) {
     nav { padding: 0.9rem 1.25rem; }
+    .nav-logo img { height: 30px; max-width: min(62vw, 240px); }
     .nav-right a:not(.btn-nav) { display: none; }
     .input-row { grid-template-columns: 1fr; }
     .callout { padding: 2rem 1.5rem; gap: 2rem; }
@@ -739,9 +759,8 @@
 <nav>
   <div class="nav-logo">
     <!-- 
-      LOGO IMAGE: Place your PLAYERFAX.png in the same folder as this HTML file
-      then this img tag will display it automatically.
-      To use a different logo file, change the src below.
+      Full wordmark: PLAYERFAX.png (same folder as this file). Icon-only asset: PLAYERFAX-mark.png (favicon + footer).
+      On Windows, PLAYERFAX.png may be the same file as playerfax.png — replace either with your horizontal export.
     -->
     <img src="PLAYERFAX.png" alt="PlayerFax" onerror="this.style.display='none'; document.querySelector('.nav-logo-fallback').style.display='block';" />
     <span class="nav-logo-fallback" style="display:none;">Player<span>Fax</span></span>
@@ -1016,11 +1035,11 @@
      FOOTER
      ===================== -->
 <footer>
-  <!--
-    FOOTER LOGO: same as nav — displays PLAYERFAX.png if present,
-    falls back to text logo automatically.
-  -->
-  <span class="footer-logo">Player<span>Fax</span></span>
+  <!-- Wordmark text below; icon mark: PLAYERFAX-mark.png -->
+  <div class="footer-brand">
+    <img class="footer-mark" src="PLAYERFAX-mark.png" alt="" />
+    <span class="footer-logo">Player<span>Fax</span></span>
+  </div>
   <p>© 2025 PlayerFax. All rights reserved.</p>
   <p>Off-Field Facts for On-Field Decisions</p>
 </footer>

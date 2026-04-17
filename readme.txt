@@ -3,9 +3,13 @@
 ========================================
 
 FILES IN THIS FOLDER:
-  index.html      → Your landing page (open this in a browser to preview)
-  PLAYERFAX.png   → Your logo (already connected)
-  README.txt      → This file
+  index.html           → Your landing page (open this in a browser to preview)
+  PLAYERFAX.png        → Full horizontal logo (wordmark) — top nav; replace with your export
+  PLAYERFAX-mark.png   → Icon-only “P” mark — favicon + footer; replace with your icon export
+  readme.txt           → This file
+
+  Note: On Windows, playerfax.png may be the same file as PLAYERFAX.png (case-insensitive).
+  On Linux hosting, use the exact filename PLAYERFAX.png so the nav image loads.
 
 TO PREVIEW LOCALLY:
   Just double-click index.html — it opens in your browser.
