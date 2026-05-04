@@ -846,30 +846,24 @@
       <div id="form-body">
         <span class="form-card-label">Request Early Access</span>
 
-        <!--
-          TO CONNECT TO FORMSPREE (collect real leads):
-          1. Go to formspree.io and create a free account
-          2. Create a new form — copy your form ID (looks like: xbjvkwpr)
-          3. Change the div below to:
-             <form action="https://formspree.io/f/YOUR_ID" method="POST">
-          4. Change the button type to type="submit"
-          5. Remove the onclick="handleSignup()" from the button
-          6. Done — submissions go to your email automatically
-        -->
+        <form action="https://formspree.io/f/xvzlkeen" method="POST" id="signup-form">
+          <input type="hidden" name="_subject" value="New PlayerFax Early Access Request" />
+          <input type="hidden" name="_next" value="" />
 
-        <div class="input-row">
-          <input type="text" id="inp-fname" name="first_name" placeholder="First name" />
-          <input type="text" id="inp-lname" name="last_name" placeholder="Last name" />
-        </div>
-        <input type="email" id="inp-email" name="email" placeholder="Work email address" />
-        <input type="text" id="inp-org" name="organization" placeholder="Organization / Team name" />
-        <input type="text" id="inp-role" name="role" placeholder="Your role (e.g. Head Coach, Director of Analytics)" />
+          <div class="input-row">
+            <input type="text" id="inp-fname" name="first_name" placeholder="First name" />
+            <input type="text" id="inp-lname" name="last_name" placeholder="Last name" />
+          </div>
+          <input type="email" id="inp-email" name="email" placeholder="Work email address" />
+          <input type="text" id="inp-org" name="organization" placeholder="Organization / Team name" />
+          <input type="text" id="inp-role" name="role" placeholder="Your role (e.g. Head Coach, Director of Analytics)" />
 
-        <button class="btn-submit" type="button" onclick="handleSignup()">
-          Get Early Access →
-        </button>
+          <button class="btn-submit" type="submit">
+            Get Early Access →
+          </button>
 
-        <p class="form-fine">No spam. You'll be first to know when we launch.</p>
+          <p class="form-fine">No spam. You'll be first to know when we launch.</p>
+        </form>
       </div>
 
       <!-- Success message shown after submit -->
@@ -1028,10 +1022,9 @@
      JAVASCRIPT
      ===================== -->
 <script>
-  // Simple form handler — shows success message
-  // If you connect Formspree (see comments above), remove this function
-  // and let the native form POST handle submission instead.
-  function handleSignup() {
+  document.getElementById('signup-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
     const fname = document.getElementById('inp-fname').value.trim();
     const email = document.getElementById('inp-email').value.trim();
 
@@ -1047,18 +1040,24 @@
       return;
     }
 
-    // Hide form, show success
-    document.getElementById('form-body').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-
-    // Optional: log to console for testing
-    console.log('New lead:', {
-      name: fname + ' ' + document.getElementById('inp-lname').value,
-      email: email,
-      org: document.getElementById('inp-org').value,
-      role: document.getElementById('inp-role').value
-    });
-  }
+    var form = e.currentTarget;
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          document.getElementById('form-body').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      })
+      .catch(function () {
+        alert('Something went wrong. Please try again.');
+      });
+  });
 </script>
 
 </body>
