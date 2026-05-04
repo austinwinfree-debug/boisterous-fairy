@@ -209,14 +209,29 @@
   .hero h1 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
-    font-size: clamp(4rem, 11vw, 8rem);
-    line-height: 0.9;
+    line-height: 0.95;
     letter-spacing: -0.01em;
-    text-transform: uppercase;
     margin-bottom: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
   }
 
-  .hero h1 .accent { color: var(--gold); }
+  .hero-headline-brand {
+    font-size: clamp(4rem, 11vw, 8rem);
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .hero-headline-tag {
+    font-size: clamp(2rem, 5.5vw, 4rem);
+    font-weight: 700;
+    color: #B3A55D;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    line-height: 1.05;
+  }
 
   .hero-tagline {
     font-family: 'Barlow Condensed', sans-serif;
@@ -788,7 +803,10 @@
 
     <div class="hero-eyebrow">Launching in 30 Days &nbsp;·&nbsp; Limited Early Access</div>
 
-    <h1>The <span class="accent">Carfax</span><br/>for Athletes.</h1>
+    <h1>
+      <span class="hero-headline-brand">PLAYERFAX</span>
+      <span class="hero-headline-tag">The Carfax for Athletes.</span>
+    </h1>
 
     <div class="hero-tagline">Off-Field Facts &nbsp;·&nbsp; On-Field Decisions</div>
 
@@ -980,9 +998,8 @@
         <img src="founder-headshot.png" alt="Founder" />
       </div>
       <div class="founder-meta">
-        <!-- UPDATE: Replace with your actual name -->
-        <h4>Founder &amp; CEO</h4>
-        <p>Former Director of Football Analytics</p>
+        <h4>Austin Winfree</h4>
+        <p>Founder &amp; CEO<br/>Former Director of Football Analytics</p>
       </div>
     </div>
 
@@ -998,7 +1015,6 @@
      FINAL CTA
      ===================== -->
 <div class="cta-section">
-  <span class="section-eyebrow">Launching in 30 Days</span>
   <h2>Be First.<br/>Get <em>Early Access.</em></h2>
   <p>We're opening the platform to a limited group of sports organizations before public launch. Request your spot now.</p>
   <a href="#signup" class="btn-primary">Request Early Access →</a>
