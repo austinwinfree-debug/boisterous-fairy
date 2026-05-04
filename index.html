@@ -846,9 +846,9 @@
       <div id="form-body">
         <span class="form-card-label">Request Early Access</span>
 
-        <form action="https://formspree.io/f/xvzlkeen" method="POST" id="signup-form">
+        <form action="https://formspree.io/f/xvzlkeen" method="POST">
           <input type="hidden" name="_subject" value="New PlayerFax Early Access Request" />
-          <input type="hidden" name="_next" value="" />
+          <input type="hidden" name="_next" value="https://playerfax.tech" />
 
           <div class="input-row">
             <input type="text" id="inp-fname" name="first_name" placeholder="First name" />
@@ -1017,48 +1017,6 @@
   <p>© 2025 PlayerFax. All rights reserved.</p>
   <p>Off-Field Facts for On-Field Decisions</p>
 </footer>
-
-<!-- =====================
-     JAVASCRIPT
-     ===================== -->
-<script>
-  document.getElementById('signup-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const fname = document.getElementById('inp-fname').value.trim();
-    const email = document.getElementById('inp-email').value.trim();
-
-    if (!fname) {
-      alert('Please enter your first name.');
-      document.getElementById('inp-fname').focus();
-      return;
-    }
-
-    if (!email || !email.includes('@')) {
-      alert('Please enter a valid email address.');
-      document.getElementById('inp-email').focus();
-      return;
-    }
-
-    var form = e.currentTarget;
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { Accept: 'application/json' }
-    })
-      .then(function (response) {
-        if (response.ok) {
-          document.getElementById('form-body').style.display = 'none';
-          document.getElementById('form-success').style.display = 'block';
-        } else {
-          alert('Something went wrong. Please try again.');
-        }
-      })
-      .catch(function () {
-        alert('Something went wrong. Please try again.');
-      });
-  });
-</script>
 
 </body>
 </html>
