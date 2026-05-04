@@ -846,9 +846,8 @@
       <div id="form-body">
         <span class="form-card-label">Request Early Access</span>
 
-        <form action="https://formspree.io/f/xvzlkeen" method="POST">
+        <form id="signup-form">
           <input type="hidden" name="_subject" value="New PlayerFax Early Access Request" />
-          <input type="hidden" name="_next" value="https://playerfax.tech" />
 
           <div class="input-row">
             <input type="text" id="inp-fname" name="first_name" placeholder="First name" />
@@ -858,7 +857,7 @@
           <input type="text" id="inp-org" name="organization" placeholder="Organization / Team name" />
           <input type="text" id="inp-role" name="role" placeholder="Your role (e.g. Head Coach, Director of Analytics)" />
 
-          <button class="btn-submit" type="submit">
+          <button class="btn-submit" type="button" onclick="handleSignup()">
             Get Early Access →
           </button>
 
@@ -1017,6 +1016,27 @@
   <p>© 2025 PlayerFax. All rights reserved.</p>
   <p>Off-Field Facts for On-Field Decisions</p>
 </footer>
+
+<script>
+function handleSignup() {
+  const form = document.getElementById('signup-form');
+  const data = new FormData(form);
+  fetch('https://formspree.io/f/xvzlkeen', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
+    if (response.ok) {
+      document.getElementById('form-body').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  })
+  .catch(() => alert('Something went wrong. Please try again.'));
+}
+</script>
 
 </body>
 </html>
