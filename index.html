@@ -71,13 +71,20 @@
   }
 
   /* LOGO — swap img src to change logo file */
+  .nav-logo {
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+  }
+
   .nav-logo img {
-    height: 88px;
+    height: 52px;
     display: block;
   }
 
   @media (max-width: 640px) {
-    .nav-logo img { height: 66px; }
+    .nav-logo img { height: 52px; }
   }
 
   /* Fallback text logo if image not found */
@@ -260,7 +267,7 @@
   .leagues {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
     margin-bottom: 3rem;
@@ -281,7 +288,7 @@
     align-items: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .leagues-logos img {
