@@ -79,7 +79,7 @@
   }
 
   .nav-logo img {
-    height: 56px;
+    height: 48px;
     width: auto;
     object-fit: contain;
     overflow: visible;
@@ -87,7 +87,7 @@
   }
 
   @media (max-width: 640px) {
-    .nav-logo img { height: 56px; }
+    .nav-logo img { height: 48px; }
   }
 
   /* Fallback text logo if image not found */
@@ -122,7 +122,8 @@
      ===================== */
   .ticker-wrap {
     background: #0A0A0A;
-    padding: 0.5rem 0;
+    padding: 0.45rem 0;
+    line-height: 1;
     overflow: hidden;
     white-space: nowrap;
     margin-top: 112px; /* height of fixed nav */
@@ -130,7 +131,8 @@
   }
 
   .ticker-inner {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
     animation: ticker-scroll 28s linear infinite;
   }
 
@@ -142,6 +144,8 @@
     text-transform: uppercase;
     color: #F0EDE4;
     padding: 0 2.5rem;
+    line-height: 1;
+    margin: 0;
   }
 
   .ticker-dot {
@@ -150,15 +154,19 @@
     font-size: 0.82rem;
     color: rgba(240,237,228,0.45);
     padding: 0;
+    margin: 0;
+    line-height: 1;
   }
 
   .ticker-logo {
-    height: 32px;
+    height: 28px;
     width: auto;
     object-fit: contain;
     filter: brightness(1) invert(0) opacity(0.85);
     vertical-align: middle;
     transition: filter 0.3s ease;
+    display: block;
+    margin: 0;
   }
 
   .ticker-logo:hover {
