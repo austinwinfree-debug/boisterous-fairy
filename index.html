@@ -116,6 +116,7 @@
     overflow: hidden;
     white-space: nowrap;
     margin-top: 112px; /* height of fixed nav */
+    border-bottom: 0.5px solid rgba(179,165,93,0.3);
   }
 
   .ticker-inner {
@@ -129,23 +130,23 @@
     font-size: 0.82rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #000;
-    padding: 0 2rem;
+    color: #F0EDE4;
+    padding: 0 2.5rem;
   }
 
   .ticker-dot {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
     font-size: 0.82rem;
-    color: rgba(0,0,0,0.4);
-    padding: 0 0.5rem;
+    color: rgba(240,237,228,0.45);
+    padding: 0;
   }
 
   .ticker-logo {
-    height: 28px;
+    height: 32px;
     width: auto;
     object-fit: contain;
-    filter: brightness(1) invert(0) opacity(0.75);
+    filter: brightness(1) invert(0) opacity(0.85);
     vertical-align: middle;
     transition: filter 0.3s ease;
   }
@@ -259,10 +260,11 @@
   .leagues {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 1.5rem;
     flex-wrap: wrap;
     margin-bottom: 3rem;
+    width: 100%;
   }
 
   .leagues-label {
@@ -271,38 +273,28 @@
     text-transform: uppercase;
     color: var(--muted);
     font-weight: 500;
-    margin-right: 0.5rem;
+    flex-shrink: 0;
   }
 
-  .badge {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
+  .leagues-logos {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: 0.5px solid var(--border);
-    background: rgba(179,165,93,0.04);
-    transition: border-color 0.25s, transform 0.2s, background 0.25s;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
-  .badge:hover {
-    border-color: var(--gold);
-    background: rgba(179,165,93,0.1);
-    transform: translateY(-3px);
-  }
-
-  .badge img {
-    height: 44px;
-    width: 44px;
+  .leagues-logos img {
+    height: 38px;
+    width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1) opacity(0.7);
-    transition: filter 0.25s, transform 0.25s;
+    filter: brightness(1) invert(0) opacity(0.8);
+    transition: opacity 0.25s, transform 0.25s, filter 0.25s;
   }
 
-  .badge:hover img {
+  .leagues-logos img:hover {
     filter: brightness(1) invert(0) opacity(1);
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   /* =====================
@@ -1173,26 +1165,15 @@
 
     <div class="hero-tagline">Off-Field Facts &nbsp;·&nbsp; On-Field Decisions</div>
 
-    <!-- League Badges -->
+    <!-- Built For -->
     <div class="leagues">
       <span class="leagues-label">Built for</span>
-
-      <div class="badge" title="NCAA">
+      <div class="leagues-logos">
         <img src="ncaa.png" alt="NCAA" />
-      </div>
-      <div class="badge" title="NFL">
         <img src="nfl.png" alt="NFL" />
-      </div>
-      <div class="badge" title="NBA">
         <img src="nba.png" alt="NBA" />
-      </div>
-      <div class="badge" title="MLB">
         <img src="mlb.png" alt="MLB" />
-      </div>
-      <div class="badge" title="NHL">
         <img src="nhl.png" alt="NHL" />
-      </div>
-      <div class="badge" title="MLS">
         <img src="mls.png" alt="MLS" />
       </div>
     </div>
