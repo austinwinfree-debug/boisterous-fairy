@@ -178,15 +178,18 @@
     pointer-events: none;
   }
 
-  /* Faint grid texture */
+  /* Faint hex + grid texture behind headline */
   .hero::after {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(179,165,93,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(179,165,93,0.04) 1px, transparent 1px);
-    background-size: 48px 48px;
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 1 L55 17.5 L55 50.5 L28 67 L1 50.5 L1 17.5 Z' fill='none' stroke='rgba(179%2C165%2C93%2C0.05)' stroke-width='1'/%3E%3C/svg%3E"),
+      linear-gradient(rgba(179,165,93,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(179,165,93,0.045) 1px, transparent 1px);
+    background-size: 56px 97px, 48px 48px, 48px 48px;
+    mask-image: radial-gradient(ellipse 65% 55% at 50% 42%, black 15%, transparent 72%);
+    -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 42%, black 15%, transparent 72%);
     pointer-events: none;
   }
 
@@ -460,6 +463,63 @@
   }
 
   /* =====================
+     HOW IT WORKS
+     ===================== */
+  .how-it-works .steps-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    margin-top: 0.5rem;
+  }
+
+  .how-it-works .step {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    padding: 0 1.25rem;
+  }
+
+  .how-it-works .step-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .how-it-works .step h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 0.65rem;
+    line-height: 1.15;
+  }
+
+  .how-it-works .step p {
+    font-size: 0.86rem;
+    color: var(--muted);
+    line-height: 1.68;
+  }
+
+  .how-it-works .step-connector {
+    flex-shrink: 0;
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2.25rem;
+    color: rgba(179,165,93,0.45);
+    font-size: 1.25rem;
+    line-height: 1;
+    user-select: none;
+  }
+
+  /* =====================
      CONTENT SECTIONS
      ===================== */
   .section {
@@ -659,6 +719,26 @@
     margin-top: 0.15rem;
   }
 
+  .founder-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.75rem;
+  }
+
+  .founder-badge {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    padding: 0.28rem 0.7rem;
+    background: rgba(179,165,93,0.04);
+    white-space: nowrap;
+  }
+
   .founder-meta .school {
     color: var(--gold);
     font-size: 0.72rem;
@@ -770,6 +850,17 @@
     .stat { border-right: none; border-bottom: 0.5px solid var(--border); }
     .stat:last-child { border-bottom: none; }
     .section { padding: 3.5rem 1.25rem; }
+    .how-it-works .steps-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2rem;
+    }
+    .how-it-works .step-connector {
+      display: none;
+    }
+    .how-it-works .step {
+      padding: 0;
+    }
   }
 </style>
 </head>
@@ -941,6 +1032,35 @@
 <hr />
 
 <!-- =====================
+     HOW IT WORKS
+     ===================== -->
+<div class="section how-it-works" id="how-it-works">
+  <span class="section-eyebrow">How It Works</span>
+
+  <div class="steps-row">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Connect Your Data</h3>
+      <p>Bring in information from your existing systems — injury reports, GPS, testing results, and more.</p>
+    </div>
+    <div class="step-connector" aria-hidden="true">→</div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Build the Profile</h3>
+      <p>PlayerFax organizes everything into one clean, complete athlete profile your entire staff can access.</p>
+    </div>
+    <div class="step-connector" aria-hidden="true">→</div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Make Better Decisions</h3>
+      <p>Coaches, trainers, and scouts work from the same source of truth — faster and with more confidence.</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<!-- =====================
      THE PROBLEM / FEATURES
      ===================== -->
 <div class="section" id="about">
@@ -1041,11 +1161,17 @@
       <div class="founder-meta">
         <h4>Austin Winfree</h4>
         <p>Founder &amp; CEO<br/>Former Director of Football Analytics</p>
+        <div class="founder-badges">
+          <span class="founder-badge">9 Years College Football</span>
+          <span class="founder-badge">2× Big Ten Champion</span>
+          <span class="founder-badge">Power 4 Analytics Director</span>
+          <span class="founder-badge">Coached 50+ NFL Draft Picks</span>
+        </div>
       </div>
     </div>
 
     <div class="founder-quote">
-      Built on experience at Memphis, Tennessee, Southern Miss, Marshall, Michigan (2× Big Ten Championships), Purdue and South Carolina — nine years inside college football at every level. PlayerFax exists because the problem is real, the data is scattered, and the cost of bad information is too high.
+      Nine years inside college football. Memphis. Tennessee. Southern Miss. Marshall. Michigan — two Big Ten Championships. Purdue. South Carolina. PlayerFax was built by someone who has sat in the meetings, had conversations with coaches, and felt the cost of scattered information firsthand. This is not a product built from the outside looking in — it is the tool I wished I had. So we made it.
     </div>
   </div>
 </div>
