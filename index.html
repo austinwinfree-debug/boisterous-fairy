@@ -141,6 +141,14 @@
     padding: 0 0.5rem;
   }
 
+  .ticker-logo {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1) opacity(0.85);
+    vertical-align: middle;
+  }
+
   @keyframes ticker-scroll {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -1113,18 +1121,20 @@
 <div class="ticker-wrap">
   <div class="ticker-inner">
     <!-- Repeated twice so the loop is seamless -->
-    <span class="ticker-item">NCAA Football</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">NFL</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">NBA</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">MLB</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">NHL</span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="ncaa.png" alt="NCAA" /></span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="nfl.png" alt="NFL" /></span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="nba.png" alt="NBA" /></span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="mlb.png" alt="MLB" /></span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="nhl.png" alt="NHL" /></span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="mls.png" alt="MLS" /></span><span class="ticker-dot">·</span>
     <span class="ticker-item">Off-Field Facts for On-Field Decisions</span><span class="ticker-dot">·</span>
     <span class="ticker-item">Now Live</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">NCAA Football</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">NFL</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">NBA</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">MLB</span><span class="ticker-dot">·</span>
-    <span class="ticker-item">NHL</span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="ncaa.png" alt="NCAA" /></span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="nfl.png" alt="NFL" /></span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="nba.png" alt="NBA" /></span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="mlb.png" alt="MLB" /></span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="nhl.png" alt="NHL" /></span><span class="ticker-dot">·</span>
+    <span class="ticker-item"><img class="ticker-logo" src="mls.png" alt="MLS" /></span><span class="ticker-dot">·</span>
     <span class="ticker-item">Off-Field Facts for On-Field Decisions</span><span class="ticker-dot">·</span>
     <span class="ticker-item">Now Live</span><span class="ticker-dot">·</span>
   </div>
