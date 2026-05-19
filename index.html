@@ -98,25 +98,14 @@
   }
 
   nav a {
-    color: var(--muted);
+    color: #F0EDE4;
     text-decoration: none;
     font-size: 0.75rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     transition: color 0.2s;
   }
-  nav a:hover { color: var(--gold); }
-
-  .btn-nav {
-    background: var(--gold) !important;
-    color: #000 !important;
-    padding: 0.45rem 1.2rem;
-    border-radius: 2px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    transition: background 0.2s !important;
-  }
-  .btn-nav:hover { background: var(--gold-light) !important; }
+  nav a:hover { color: #B3A55D; }
 
   /* =====================
      SCROLLING TICKER
@@ -541,6 +530,179 @@
   }
 
   /* =====================
+     MOCK PROFILE CARD
+     ===================== */
+  .profile-showcase .section-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-top: -2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .profile-mock-card {
+    max-width: 420px;
+    margin: 0 auto;
+    background: var(--dark2);
+    border: 1px solid #B3A55D;
+    border-radius: 4px;
+    padding: 1.75rem 1.5rem 1.5rem;
+  }
+
+  .profile-mock-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+
+  .profile-mock-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-stat-row {
+    margin-bottom: 1rem;
+  }
+
+  .profile-stat-row:last-of-type {
+    margin-bottom: 1.35rem;
+  }
+
+  .profile-stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.4rem;
+  }
+
+  .profile-stat-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .profile-stat-pct {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .profile-stat-track {
+    height: 5px;
+    background: var(--dark3);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .profile-stat-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  .profile-ai-summary {
+    background: var(--dark3);
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    padding: 0.85rem 1rem;
+  }
+
+  .profile-ai-summary-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+  }
+
+  .profile-ai-summary p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* =====================
+     INTEGRATIONS
+     ===================== */
+  .integrations-section .section-note {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .integrations-scroll-wrap {
+    overflow: hidden;
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    background: var(--dark2);
+    padding: 1.35rem 0;
+  }
+
+  .integrations-scroll-wrap + .integrations-scroll-wrap {
+    border-top: none;
+  }
+
+  .integrations-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+  }
+
+  .integrations-track-left {
+    animation: integrations-scroll-left 35s linear infinite;
+  }
+
+  .integrations-track-right {
+    animation: integrations-scroll-right 40s linear infinite;
+  }
+
+  .integrations-logos {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 0 24px;
+    flex-shrink: 0;
+  }
+
+  .integrations-logos img {
+    height: 36px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: opacity 0.25s, filter 0.25s, transform 0.25s;
+  }
+
+  .integrations-logos img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.08);
+  }
+
+  @keyframes integrations-scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes integrations-scroll-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+  /* =====================
      CONTENT SECTIONS
      ===================== */
   .section {
@@ -902,7 +1064,10 @@
   @media (max-width: 640px) {
     nav { padding: 0.6rem 1.25rem; }
     .ticker-wrap { margin-top: 88px; }
-    .nav-right a:not(.btn-nav) { display: none; }
+    .nav-right { gap: 0.85rem; }
+    nav a { font-size: 0.62rem; }
+    .integrations-track-left { animation-duration: 45s; }
+    .integrations-track-right { animation-duration: 50s; }
     .input-row { grid-template-columns: 1fr; }
     .callout { padding: 2rem 1.5rem; gap: 2rem; }
     .stats-bar { gap: 1rem; }
@@ -940,7 +1105,9 @@
   </div>
   <div class="nav-right">
     <a href="#about">About</a>
-    <a href="#signup" class="btn-nav">Request a Demo</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#signup">Request a Demo</a>
+    <a href="mailto:info@playerfax.tech">Contact</a>
   </div>
 </nav>
 
@@ -1079,7 +1246,7 @@
     <div class="stat-label">Major Sports Leagues</div>
   </div>
   <div class="stat">
-    <div class="stat-num">50+</div>
+    <div class="stat-num">10+</div>
     <div class="stat-label">NFL Draft Picks Coached</div>
   </div>
   <div class="stat">
@@ -1089,7 +1256,7 @@
 </div>
 
 <div class="social-proof-bar">
-  Trusted by programs across all of football — from NFL, Power 4, Group of 5, FCS to High School
+  Trusted by programs across college football — from Power 4 to Group of 5
 </div>
 
 <hr />
@@ -1117,6 +1284,55 @@
       <div class="step-num">3</div>
       <h3>Make Better Decisions</h3>
       <p>Coaches, trainers, and scouts work from the same source of truth — faster and with more confidence.</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<!-- =====================
+     MOCK ATHLETE PROFILE
+     ===================== -->
+<div class="section profile-showcase" id="profile-preview">
+  <span class="section-eyebrow">What a PlayerFax Profile Looks Like</span>
+  <p class="section-note">Actual interface may vary — currently in active development.</p>
+
+  <div class="profile-mock-card">
+    <div class="profile-mock-name">Athlete #32</div>
+    <p class="profile-mock-meta">Wide Receiver · SEC · Class of 2027</p>
+
+    <div class="profile-stat-row">
+      <div class="profile-stat-header">
+        <span class="profile-stat-label">GPS Load</span>
+        <span class="profile-stat-pct">78%</span>
+      </div>
+      <div class="profile-stat-track"><div class="profile-stat-fill" style="width:78%"></div></div>
+    </div>
+    <div class="profile-stat-row">
+      <div class="profile-stat-header">
+        <span class="profile-stat-label">Recovery Score</span>
+        <span class="profile-stat-pct">85%</span>
+      </div>
+      <div class="profile-stat-track"><div class="profile-stat-fill" style="width:85%"></div></div>
+    </div>
+    <div class="profile-stat-row">
+      <div class="profile-stat-header">
+        <span class="profile-stat-label">Strength Index</span>
+        <span class="profile-stat-pct">62%</span>
+      </div>
+      <div class="profile-stat-track"><div class="profile-stat-fill" style="width:62%"></div></div>
+    </div>
+    <div class="profile-stat-row">
+      <div class="profile-stat-header">
+        <span class="profile-stat-label">Availability</span>
+        <span class="profile-stat-pct">94%</span>
+      </div>
+      <div class="profile-stat-track"><div class="profile-stat-fill" style="width:94%"></div></div>
+    </div>
+
+    <div class="profile-ai-summary">
+      <div class="profile-ai-summary-label">AI Summary</div>
+      <p>Trending positively over last 14 days. Workload within optimal range.</p>
     </div>
   </div>
 </div>
@@ -1194,6 +1410,70 @@
 <hr />
 
 <!-- =====================
+     INTEGRATIONS
+     ===================== -->
+<div class="section integrations-section" id="integrations">
+  <span class="section-eyebrow">Integrations</span>
+  <h2>Built to Connect With Your <em>Existing Stack</em></h2>
+  <p class="section-body">PlayerFax is designed to pull from the tools your staff already uses — bringing everything into one place automatically.</p>
+  <p class="section-note">More integrations added continuously. Don't see yours? We'll build it.</p>
+
+  <div class="integrations-scroll-wrap">
+    <div class="integrations-track integrations-track-left">
+      <div class="integrations-logos">
+        <img src="integrations/Vald.png" alt="VALD" />
+        <img src="integrations/hawkins.png" alt="Hawkins Dynamics" />
+        <img src="integrations/sparta.png" alt="Sparta Science" />
+        <img src="integrations/Kinexon.png" alt="Kinexon" />
+        <img src="integrations/STATsports.png" alt="STATSports" />
+        <img src="integrations/Oura.png" alt="Oura" />
+        <img src="integrations/Polar.png" alt="Polar" />
+        <img src="integrations/Perch.png" alt="Perch" />
+        <img src="integrations/Catapult.png" alt="Catapult" />
+      </div>
+      <div class="integrations-logos" aria-hidden="true">
+        <img src="integrations/Vald.png" alt="" />
+        <img src="integrations/hawkins.png" alt="" />
+        <img src="integrations/sparta.png" alt="" />
+        <img src="integrations/Kinexon.png" alt="" />
+        <img src="integrations/STATsports.png" alt="" />
+        <img src="integrations/Oura.png" alt="" />
+        <img src="integrations/Polar.png" alt="" />
+        <img src="integrations/Perch.png" alt="" />
+        <img src="integrations/Catapult.png" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="integrations-scroll-wrap">
+    <div class="integrations-track integrations-track-right">
+      <div class="integrations-logos">
+        <img src="integrations/firstbeat.png" alt="Firstbeat" />
+        <img src="integrations/Gymaware.png" alt="GymAware" />
+        <img src="integrations/Gatorade.png" alt="Gatorade" />
+        <img src="integrations/EliteForm.png" alt="EliteForm" />
+        <img src="integrations/FitBit.png" alt="Fitbit" />
+        <img src="integrations/teambuilder.png" alt="TeamBuildr" />
+        <img src="integrations/Whoop.png" alt="WHOOP" />
+        <img src="integrations/playerdata.png" alt="PlayerData" />
+      </div>
+      <div class="integrations-logos" aria-hidden="true">
+        <img src="integrations/firstbeat.png" alt="" />
+        <img src="integrations/Gymaware.png" alt="" />
+        <img src="integrations/Gatorade.png" alt="" />
+        <img src="integrations/EliteForm.png" alt="" />
+        <img src="integrations/FitBit.png" alt="" />
+        <img src="integrations/teambuilder.png" alt="" />
+        <img src="integrations/Whoop.png" alt="" />
+        <img src="integrations/playerdata.png" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<!-- =====================
      CARFAX CALLOUT
      ===================== -->
 <div class="section">
@@ -1228,13 +1508,13 @@
           <span class="founder-badge">9 Years College Football</span>
           <span class="founder-badge">2× Big Ten Champion</span>
           <span class="founder-badge">Power 4 Analytics Director</span>
-          <span class="founder-badge">Coached 50+ NFL Draft Picks</span>
+          <span class="founder-badge">Coached 10+ NFL Draft Picks</span>
         </div>
       </div>
     </div>
 
     <div class="founder-quote">
-      Nine years inside college football. Memphis. Tennessee. Southern Miss. Marshall. Michigan — two Big Ten Championships. Purdue. South Carolina. PlayerFax was built by someone who has sat in the meetings, had conversations with coaches, and felt the cost of scattered information firsthand. This is not a product built from the outside looking in — it is the tool I wished I had. So we made it.
+      Nine years inside college football. Memphis. Tennessee. Southern Miss. Marshall. Michigan — two Big Ten Championships. Purdue. South Carolina. PlayerFax was built by someone who has sat in the meetings, made the calls, and felt the cost of scattered information firsthand. This is not a product built from the outside looking in — it is the tool I wished I had.
     </div>
   </div>
 </div>
@@ -1266,10 +1546,10 @@
     <span class="footer-nav-sep">·</span>
     <a href="#signup">Request a Demo</a>
     <span class="footer-nav-sep">·</span>
-    <a href="mailto:winfree@playerfax.tech">Contact</a>
+    <a href="mailto:info@playerfax.tech">Contact</a>
   </nav>
   <p>© 2026 PlayerFax. All rights reserved.</p>
-  <p class="footer-email"><a href="mailto:winfree@playerfax.tech">winfree@playerfax.tech</a></p>
+  <p class="footer-email"><a href="mailto:info@playerfax.tech">info@playerfax.tech</a></p>
   <p>Off-Field Facts for On-Field Decisions</p>
 </footer>
 
