@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PlayerFax is the trusted athlete intelligence platform for college and professional sports organizations. One profile. Every athlete. Off-field facts for on-field decisions." />
+<meta name="keywords" content="athlete data, sports analytics, college football analytics, athlete profile, sports performance software, player data management" />
+<meta property="og:title" content="PlayerFax — Off-Field Facts for On-Field Decisions" />
+<meta property="og:description" content="The Carfax for Athletes. One platform for injury history, workload data, testing results, and AI-generated summaries." />
 <title>PlayerFax – Off-Field Facts for On-Field Decisions</title>
 
 <!-- ============================================================
@@ -463,6 +467,23 @@
   }
 
   /* =====================
+     SOCIAL PROOF BAR
+     ===================== */
+  .social-proof-bar {
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(179,165,93,0.62);
+    line-height: 1.65;
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    background: var(--dark);
+  }
+
+  /* =====================
      HOW IT WORKS
      ===================== */
   .how-it-works .steps-row {
@@ -837,6 +858,44 @@
     margin-top: 0.25rem;
   }
 
+  .footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-nav a:hover { color: var(--gold); }
+
+  .footer-nav-sep {
+    color: rgba(179,165,93,0.35);
+    font-size: 0.72rem;
+    user-select: none;
+  }
+
+  footer .footer-email {
+    margin-top: 0.5rem;
+  }
+
+  footer .footer-email a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  footer .footer-email a:hover { color: var(--gold-light); }
+
   /* =====================
      RESPONSIVE
      ===================== */
@@ -1012,21 +1071,25 @@
      ===================== -->
 <div class="stats-bar">
   <div class="stat">
-    <div class="stat-num">5+</div>
-    <div class="stat-label">Major Sports</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">1</div>
-    <div class="stat-label">Complete Athlete Profile</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">9</div>
+    <div class="stat-num">9+</div>
     <div class="stat-label">Years Inside Football</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">4</div>
+    <div class="stat-label">Major Sports Leagues</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">50+</div>
+    <div class="stat-label">NFL Draft Picks Coached</div>
   </div>
   <div class="stat">
     <div class="stat-num">2×</div>
     <div class="stat-label">Big Ten Championships</div>
   </div>
+</div>
+
+<div class="social-proof-bar">
+  Trusted by programs across all of football — from NFL, Power 4, Group of 5, FCS to High School
 </div>
 
 <hr />
@@ -1196,7 +1259,17 @@
     falls back to text logo automatically.
   -->
   <span class="footer-logo">Player<span>Fax</span></span>
-  <p>© 2025 PlayerFax. All rights reserved.</p>
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="#about">About</a>
+    <span class="footer-nav-sep">·</span>
+    <a href="#how-it-works">How It Works</a>
+    <span class="footer-nav-sep">·</span>
+    <a href="#signup">Request a Demo</a>
+    <span class="footer-nav-sep">·</span>
+    <a href="mailto:winfree@playerfax.tech">Contact</a>
+  </nav>
+  <p>© 2026 PlayerFax. All rights reserved.</p>
+  <p class="footer-email"><a href="mailto:winfree@playerfax.tech">winfree@playerfax.tech</a></p>
   <p>Off-Field Facts for On-Field Decisions</p>
 </footer>
 
