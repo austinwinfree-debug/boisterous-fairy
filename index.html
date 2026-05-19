@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -12,9 +12,9 @@
 <!-- ============================================================
      PLAYERFAX LANDING PAGE
      Brand Colors:
-       Vegas Gold   → #B3A55D
-       Graphite Gray → #4A4A4A
-       Black        → #000000
+       Vegas Gold   â†’ #B3A55D
+       Graphite Gray â†’ #4A4A4A
+       Black        â†’ #000000
      Font: Barlow Condensed (display) + Inter (body)
      To edit: open this file in Cursor and just describe your changes
      ============================================================ -->
@@ -337,7 +337,7 @@
   /* =====================
      FORMSPREE INTEGRATION
      Replace YOUR_FORM_ID below with your actual Formspree endpoint
-     Get one free at formspree.io → New Form → copy the endpoint ID
+     Get one free at formspree.io â†’ New Form â†’ copy the endpoint ID
      ===================== */
   /* form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" */
 
@@ -677,19 +677,15 @@
   }
 
   .integrations-logos img {
-    height: 36px;
+    height: 40px;
     width: auto;
-    max-width: 120px;
     object-fit: contain;
-    opacity: 0.6;
-    filter: grayscale(100%);
-    transition: opacity 0.25s, filter 0.25s, transform 0.25s;
+    filter: brightness(0) invert(1) opacity(0.55);
+    transition: filter 0.3s ease;
   }
 
   .integrations-logos img:hover {
-    opacity: 1;
-    filter: grayscale(0%);
-    transform: scale(1.08);
+    filter: brightness(1) invert(0) opacity(1);
   }
 
   @keyframes integrations-scroll-left {
@@ -1215,7 +1211,7 @@
           <input type="text" id="inp-role" name="role" placeholder="Your role (e.g. Head Coach, Director of Analytics)" />
 
           <button class="btn-submit" type="button" onclick="handleSignup()">
-            Request a Demo →
+            Request a Demo â†’
           </button>
 
           <p class="form-fine">No spam. We'll be in touch shortly.</p>
@@ -1224,7 +1220,7 @@
 
       <!-- Success message shown after submit -->
       <div class="form-success" id="form-success">
-        <div class="success-icon">✓</div>
+        <div class="success-icon">âœ“</div>
         <h3>You're on the list.</h3>
         <p>We'll reach out shortly to schedule your demo.</p>
       </div>
@@ -1250,7 +1246,7 @@
     <div class="stat-label">NFL Draft Picks Coached</div>
   </div>
   <div class="stat">
-    <div class="stat-num">2×</div>
+    <div class="stat-num">2Ã—</div>
     <div class="stat-label">Big Ten Championships</div>
   </div>
 </div>
@@ -1273,13 +1269,13 @@
       <h3>Connect Your Data</h3>
       <p>Bring in information from your existing systems — injury reports, GPS, testing results, and more.</p>
     </div>
-    <div class="step-connector" aria-hidden="true">→</div>
+    <div class="step-connector" aria-hidden="true">â†’</div>
     <div class="step">
       <div class="step-num">2</div>
       <h3>Build the Profile</h3>
       <p>PlayerFax organizes everything into one clean, complete athlete profile your entire staff can access.</p>
     </div>
-    <div class="step-connector" aria-hidden="true">→</div>
+    <div class="step-connector" aria-hidden="true">â†’</div>
     <div class="step">
       <div class="step-num">3</div>
       <h3>Make Better Decisions</h3>
@@ -1290,54 +1286,6 @@
 
 <hr />
 
-<!-- =====================
-     MOCK ATHLETE PROFILE
-     ===================== -->
-<div class="section profile-showcase" id="profile-preview">
-  <span class="section-eyebrow">What a PlayerFax Profile Looks Like</span>
-  <p class="section-note">Actual interface may vary — currently in active development.</p>
-
-  <div class="profile-mock-card">
-    <div class="profile-mock-name">Athlete #32</div>
-    <p class="profile-mock-meta">Wide Receiver · SEC · Class of 2027</p>
-
-    <div class="profile-stat-row">
-      <div class="profile-stat-header">
-        <span class="profile-stat-label">GPS Load</span>
-        <span class="profile-stat-pct">78%</span>
-      </div>
-      <div class="profile-stat-track"><div class="profile-stat-fill" style="width:78%"></div></div>
-    </div>
-    <div class="profile-stat-row">
-      <div class="profile-stat-header">
-        <span class="profile-stat-label">Recovery Score</span>
-        <span class="profile-stat-pct">85%</span>
-      </div>
-      <div class="profile-stat-track"><div class="profile-stat-fill" style="width:85%"></div></div>
-    </div>
-    <div class="profile-stat-row">
-      <div class="profile-stat-header">
-        <span class="profile-stat-label">Strength Index</span>
-        <span class="profile-stat-pct">62%</span>
-      </div>
-      <div class="profile-stat-track"><div class="profile-stat-fill" style="width:62%"></div></div>
-    </div>
-    <div class="profile-stat-row">
-      <div class="profile-stat-header">
-        <span class="profile-stat-label">Availability</span>
-        <span class="profile-stat-pct">94%</span>
-      </div>
-      <div class="profile-stat-track"><div class="profile-stat-fill" style="width:94%"></div></div>
-    </div>
-
-    <div class="profile-ai-summary">
-      <div class="profile-ai-summary-label">AI Summary</div>
-      <p>Trending positively over last 14 days. Workload within optimal range.</p>
-    </div>
-  </div>
-</div>
-
-<hr />
 
 <!-- =====================
      THE PROBLEM / FEATURES
@@ -1421,26 +1369,26 @@
   <div class="integrations-scroll-wrap">
     <div class="integrations-track integrations-track-left">
       <div class="integrations-logos">
-        <img src="integrations/Vald.png" alt="VALD" />
-        <img src="integrations/hawkins.png" alt="Hawkins Dynamics" />
-        <img src="integrations/sparta.png" alt="Sparta Science" />
-        <img src="integrations/Kinexon.png" alt="Kinexon" />
-        <img src="integrations/STATsports.png" alt="STATSports" />
-        <img src="integrations/Oura.png" alt="Oura" />
-        <img src="integrations/Polar.png" alt="Polar" />
-        <img src="integrations/Perch.png" alt="Perch" />
         <img src="integrations/Catapult.png" alt="Catapult" />
+        <img src="integrations/EliteForm.png" alt="EliteForm" />
+        <img src="integrations/firstbeat.png" alt="Firstbeat" />
+        <img src="integrations/FitBit.png" alt="Fitbit" />
+        <img src="integrations/Gatorade.png" alt="Gatorade" />
+        <img src="integrations/Gymaware.png" alt="GymAware" />
+        <img src="integrations/hawkins.png" alt="Hawkins Dynamics" />
+        <img src="integrations/Kinexon.png" alt="Kinexon" />
+        <img src="integrations/Oura.png" alt="Oura" />
       </div>
       <div class="integrations-logos" aria-hidden="true">
-        <img src="integrations/Vald.png" alt="" />
-        <img src="integrations/hawkins.png" alt="" />
-        <img src="integrations/sparta.png" alt="" />
-        <img src="integrations/Kinexon.png" alt="" />
-        <img src="integrations/STATsports.png" alt="" />
-        <img src="integrations/Oura.png" alt="" />
-        <img src="integrations/Polar.png" alt="" />
-        <img src="integrations/Perch.png" alt="" />
         <img src="integrations/Catapult.png" alt="" />
+        <img src="integrations/EliteForm.png" alt="" />
+        <img src="integrations/firstbeat.png" alt="" />
+        <img src="integrations/FitBit.png" alt="" />
+        <img src="integrations/Gatorade.png" alt="" />
+        <img src="integrations/Gymaware.png" alt="" />
+        <img src="integrations/hawkins.png" alt="" />
+        <img src="integrations/Kinexon.png" alt="" />
+        <img src="integrations/Oura.png" alt="" />
       </div>
     </div>
   </div>
@@ -1448,24 +1396,24 @@
   <div class="integrations-scroll-wrap">
     <div class="integrations-track integrations-track-right">
       <div class="integrations-logos">
-        <img src="integrations/firstbeat.png" alt="Firstbeat" />
-        <img src="integrations/Gymaware.png" alt="GymAware" />
-        <img src="integrations/Gatorade.png" alt="Gatorade" />
-        <img src="integrations/EliteForm.png" alt="EliteForm" />
-        <img src="integrations/FitBit.png" alt="Fitbit" />
-        <img src="integrations/teambuilder.png" alt="TeamBuildr" />
-        <img src="integrations/Whoop.png" alt="WHOOP" />
+        <img src="integrations/Perch.png" alt="Perch" />
         <img src="integrations/playerdata.png" alt="PlayerData" />
+        <img src="integrations/Polar.png" alt="Polar" />
+        <img src="integrations/SpartaScience.png" alt="Sparta Science" />
+        <img src="integrations/STATsports.png" alt="STATSports" />
+        <img src="integrations/teambuilder.png" alt="TeamBuildr" />
+        <img src="integrations/Vald.png" alt="VALD" />
+        <img src="integrations/Whoop.png" alt="WHOOP" />
       </div>
       <div class="integrations-logos" aria-hidden="true">
-        <img src="integrations/firstbeat.png" alt="" />
-        <img src="integrations/Gymaware.png" alt="" />
-        <img src="integrations/Gatorade.png" alt="" />
-        <img src="integrations/EliteForm.png" alt="" />
-        <img src="integrations/FitBit.png" alt="" />
-        <img src="integrations/teambuilder.png" alt="" />
-        <img src="integrations/Whoop.png" alt="" />
+        <img src="integrations/Perch.png" alt="" />
         <img src="integrations/playerdata.png" alt="" />
+        <img src="integrations/Polar.png" alt="" />
+        <img src="integrations/SpartaScience.png" alt="" />
+        <img src="integrations/STATsports.png" alt="" />
+        <img src="integrations/teambuilder.png" alt="" />
+        <img src="integrations/Vald.png" alt="" />
+        <img src="integrations/Whoop.png" alt="" />
       </div>
     </div>
   </div>
@@ -1506,7 +1454,7 @@
         <p>Founder &amp; CEO<br/>Former Director of Football Analytics</p>
         <div class="founder-badges">
           <span class="founder-badge">9 Years College Football</span>
-          <span class="founder-badge">2× Big Ten Champion</span>
+          <span class="founder-badge">2Ã— Big Ten Champion</span>
           <span class="founder-badge">Power 4 Analytics Director</span>
           <span class="founder-badge">Coached 10+ NFL Draft Picks</span>
         </div>
@@ -1527,7 +1475,7 @@
 <div class="cta-section">
   <h2>PlayerFax Is Live.<br/>Request a <em>Demo.</em></h2>
   <p>See how your staff can get the complete athlete picture in one place. Request a demo and we'll show you what's possible.</p>
-  <a href="#signup" class="btn-primary">Request a Demo →</a>
+  <a href="#signup" class="btn-primary">Request a Demo â†’</a>
 </div>
 
 <!-- =====================
@@ -1539,15 +1487,6 @@
     falls back to text logo automatically.
   -->
   <span class="footer-logo">Player<span>Fax</span></span>
-  <nav class="footer-nav" aria-label="Footer">
-    <a href="#about">About</a>
-    <span class="footer-nav-sep">·</span>
-    <a href="#how-it-works">How It Works</a>
-    <span class="footer-nav-sep">·</span>
-    <a href="#signup">Request a Demo</a>
-    <span class="footer-nav-sep">·</span>
-    <a href="mailto:info@playerfax.tech">Contact</a>
-  </nav>
   <p>© 2026 PlayerFax. All rights reserved.</p>
   <p class="footer-email"><a href="mailto:info@playerfax.tech">info@playerfax.tech</a></p>
   <p>Off-Field Facts for On-Field Decisions</p>
