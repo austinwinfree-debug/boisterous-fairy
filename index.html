@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="pmark.png" />
+<link rel="apple-touch-icon" href="pmark.png" />
+<meta name="theme-color" content="#000000" />
 <meta name="description" content="PlayerFax is the trusted athlete intelligence platform for college and professional sports organizations. One profile. Every athlete. Off-field facts for on-field decisions." />
 <meta name="keywords" content="athlete data, sports analytics, college football analytics, athlete profile, sports performance software, player data management" />
 <meta property="og:title" content="PlayerFax — Off-Field Facts for On-Field Decisions" />
@@ -1796,6 +1799,110 @@
   /* FOOTER */
   footer { padding: 2rem 1.25rem; }
 }
+
+@media (max-width: 768px) {
+  .scroll-scene {
+    height: 100vh !important;
+  }
+  .sticky {
+    position: relative !important;
+    height: 100vh !important;
+  }
+  .field-canvas, .field-stage {
+    display: none !important;
+  }
+  .ipad-scene {
+    display: none !important;
+  }
+  .sparks {
+    display: none !important;
+  }
+  .hud {
+    display: none !important;
+  }
+  .scrl {
+    display: none !important;
+  }
+  .content-ov, .co {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    position: relative !important;
+    background: #000 !important;
+    padding: 6rem 1.5rem 3rem !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .ci {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    text-align: center !important;
+  }
+  .hl {
+    font-size: 3.5rem !important;
+    line-height: 0.9 !important;
+  }
+  .sh {
+    font-size: 1.3rem !important;
+  }
+  .bc {
+    font-size: 0.95rem !important;
+    max-width: 100% !important;
+  }
+  .tr {
+    max-width: 100% !important;
+    justify-content: center !important;
+  }
+  .bf {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin-top: 2rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+  }
+  .bfg img { height: 24px !important; }
+  .nav-links a:not(.ncta):not(.nav-cta) { display: none !important; }
+  .stats-bar, .sports-bar {
+    flex-wrap: wrap !important;
+    padding: 1rem !important;
+  }
+  .stat, .sports-bar-item {
+    width: 50% !important;
+    border-right: none !important;
+    padding: 0.75rem !important;
+  }
+  [style*="grid-template-columns:1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  .card-grid, .cards {
+    grid-template-columns: 1fr !important;
+  }
+  .callout, .carfax-block {
+    flex-direction: column !important;
+    padding: 1.5rem !important;
+  }
+  .founder-row, .founder-bar {
+    flex-direction: column !important;
+  }
+  .section, section {
+    padding: 3rem 1.25rem !important;
+  }
+  .input-row, .form-row {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+  }
+  iframe {
+    width: 100% !important;
+    aspect-ratio: 16/9 !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -2588,6 +2695,7 @@ let tick=false;
 window.addEventListener('scroll',()=>{if(!tick){requestAnimationFrame(upd);tick=true;}},{passive:true});
 
 function upd(){
+  if (window.innerWidth <= 768) return;
   tick=false;
   const top=SS.getBoundingClientRect().top+window.scrollY;
   const sc=window.scrollY-top;
