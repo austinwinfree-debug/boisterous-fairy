@@ -1675,8 +1675,33 @@
 @media (max-width: 768px) {
 
   /* NAV */
-  nav { padding: 0 1.25rem; }
-  .nav-links a:not(.nav-cta):not(.ncta) { display: none; }
+  nav {
+    padding: 0 1rem;
+    height: 56px;
+  }
+
+  .nav-logo-text, .nl {
+    font-size: 1.1rem;
+  }
+
+  nav img {
+    height: 32px;
+  }
+
+  .nav-links {
+    gap: 0.75rem;
+  }
+
+  .nav-links a:not(.nav-cta):not(.ncta) {
+    display: none;
+  }
+
+  .nav-cta, .ncta {
+    font-size: 0.7rem !important;
+    padding: 0.35rem 0.75rem !important;
+    letter-spacing: 0.06em !important;
+    white-space: nowrap;
+  }
 
   /* HERO FIELD — simplify 3D on mobile */
   .scroll-scene { height: 250vh; }
