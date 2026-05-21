@@ -536,31 +536,41 @@
   /* =====================
      HOW IT WORKS
      ===================== */
-  .how-it-works .steps-row {
+  .how-it-works .htw-cards-row {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 0;
+    gap: 1.5rem;
     margin-top: 0.5rem;
   }
 
-  .how-it-works .step {
+  .how-it-works .htw-card {
     flex: 1;
     min-width: 0;
-    text-align: center;
-    padding: 0 1.25rem;
+    background: #141414;
+    border: 0.5px solid rgba(179,165,93,0.3);
+    border-radius: 8px;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
-  .how-it-works .step-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(2.8rem, 6vw, 4rem);
-    font-weight: 900;
-    line-height: 1;
-    color: var(--gold);
-    margin-bottom: 1rem;
+  .how-it-works .htw-card.htw-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .how-it-works .step h3 {
+  .how-it-works .htw-card:nth-child(1).htw-visible { transition-delay: 0s; }
+  .how-it-works .htw-card:nth-child(2).htw-visible { transition-delay: 0.15s; }
+  .how-it-works .htw-card:nth-child(3).htw-visible { transition-delay: 0.3s; }
+
+  .how-it-works .htw-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .how-it-works .htw-card h3 {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
@@ -571,23 +581,10 @@
     line-height: 1.15;
   }
 
-  .how-it-works .step p {
+  .how-it-works .htw-card p {
     font-size: 0.86rem;
     color: var(--muted);
     line-height: 1.68;
-  }
-
-  .how-it-works .step-connector {
-    flex-shrink: 0;
-    width: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 2.25rem;
-    color: rgba(179,165,93,0.45);
-    font-size: 1.25rem;
-    line-height: 1;
-    user-select: none;
   }
 
   /* =====================
@@ -1131,16 +1128,9 @@
     .stat { border-right: none; border-bottom: 0.5px solid var(--border); }
     .stat:last-child { border-bottom: none; }
     .section { padding: 3.5rem 1.25rem; }
-    .how-it-works .steps-row {
+    .how-it-works .htw-cards-row {
       flex-direction: column;
       align-items: stretch;
-      gap: 2rem;
-    }
-    .how-it-works .step-connector {
-      display: none;
-    }
-    .how-it-works .step {
-      padding: 0;
     }
   }
 
@@ -2076,26 +2066,86 @@
      ===================== -->
 <div class="section how-it-works" id="how-it-works">
   <span class="section-eyebrow">How It Works</span>
+  <h2>Three Steps to a <em>Complete Picture.</em></h2>
 
-  <div class="steps-row">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h3>Connect Your Data</h3>
-      <p>Bring in information from your existing systems — injury reports, GPS, testing results, and more.</p>
-    </div>
-    <div class="step-connector" aria-hidden="true">&rarr;</div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h3>Build the Profile</h3>
-      <p>PlayerFax organizes everything into one clean, complete athlete profile your entire staff can access.</p>
-    </div>
-    <div class="step-connector" aria-hidden="true">&rarr;</div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h3>Make Better Decisions</h3>
-      <p>Coaches, trainers, and scouts work from the same source of truth — faster and with more confidence.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:rgba(179,165,93,0.1);border-radius:8px;overflow:hidden;margin-top:2.5rem;">
+
+  <div style="background:#0a0a0a;padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;text-transform:uppercase;letter-spacing:0.04em;color:#F0EDE4;line-height:1;">Connect</div>
+    <div style="font-size:13px;color:rgba(240,237,228,0.5);line-height:1.7;max-width:280px;">Works with what your staff already uses — from legacy spreadsheets to enterprise wearable platforms.</div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+        <div style="padding:9px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px;"><div style="width:4px;height:4px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div><span style="font-size:12px;font-weight:600;color:#F0EDE4;letter-spacing:0.04em;">Catapult</span></div>
+        <div style="padding:9px 0 9px 1rem;border-bottom:0.5px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px;border-left:0.5px solid rgba(255,255,255,0.06);"><div style="width:4px;height:4px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div><span style="font-size:12px;font-weight:600;color:#F0EDE4;letter-spacing:0.04em;">VALD</span></div>
+        <div style="padding:9px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px;"><div style="width:4px;height:4px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div><span style="font-size:12px;font-weight:600;color:#F0EDE4;letter-spacing:0.04em;">Perch</span></div>
+        <div style="padding:9px 0 9px 1rem;border-bottom:0.5px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px;border-left:0.5px solid rgba(255,255,255,0.06);"><div style="width:4px;height:4px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div><span style="font-size:12px;font-weight:600;color:#F0EDE4;letter-spacing:0.04em;">Hawkin</span></div>
+        <div style="padding:9px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px;"><div style="width:4px;height:4px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div><span style="font-size:12px;font-weight:600;color:#F0EDE4;letter-spacing:0.04em;">Sparta</span></div>
+        <div style="padding:9px 0 9px 1rem;border-bottom:0.5px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px;border-left:0.5px solid rgba(255,255,255,0.06);"><div style="width:4px;height:4px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div><span style="font-size:12px;font-weight:600;color:#F0EDE4;letter-spacing:0.04em;">Firstbeat</span></div>
+        <div style="padding:9px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px;"><div style="width:4px;height:4px;border-radius:50%;background:rgba(179,165,93,0.7);flex-shrink:0;"></div><span style="font-size:12px;font-weight:600;color:rgba(240,237,228,0.55);letter-spacing:0.04em;">WHOOP</span></div>
+        <div style="padding:9px 0 9px 1rem;border-bottom:0.5px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px;border-left:0.5px solid rgba(255,255,255,0.06);"><div style="width:4px;height:4px;border-radius:50%;background:rgba(240,237,228,0.2);flex-shrink:0;"></div><span style="font-size:12px;font-weight:600;color:rgba(240,237,228,0.3);letter-spacing:0.04em;">Excel / BI</span></div>
+      </div>
+      <div style="padding-top:12px;font-size:11px;color:rgba(179,165,93,0.6);letter-spacing:0.1em;">+ Many more — our API capabilities are unlimited.</div>
     </div>
   </div>
+
+  <div style="background:#0a0a0a;padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;text-transform:uppercase;letter-spacing:0.04em;color:#F0EDE4;line-height:1;">Surface</div>
+    <div style="font-size:13px;color:rgba(240,237,228,0.5);line-height:1.7;max-width:280px;">Risk identified before it becomes a problem. Our proprietary Fatigue Factor™ synthesizes every stream into one number.</div>
+    <div style="background:rgba(200,75,48,0.05);border:0.5px solid rgba(200,75,48,0.2);border-radius:6px;padding:16px;">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(200,75,48,0.85);">Fatigue Factor™</div>
+          <div style="font-size:10px;color:rgba(240,237,228,0.28);margin-top:3px;letter-spacing:0.06em;">PlayerFax Proprietary Index</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.8rem;color:#C84B30;line-height:1;">78</div>
+          <div style="font-size:10px;color:rgba(240,237,228,0.3);">/ 100</div>
+        </div>
+      </div>
+      <div style="height:5px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;margin-bottom:5px;"><div style="width:78%;height:100%;background:linear-gradient(90deg,#7a2010,#C84B30,#ff6b4a);border-radius:3px;"></div></div>
+      <div style="display:flex;justify-content:space-between;">
+        <span style="font-size:10px;color:rgba(240,237,228,0.28);">Optimal</span>
+        <span style="font-size:10px;color:rgba(240,237,228,0.28);">Moderate</span>
+        <span style="font-size:10px;color:rgba(212,133,10,0.65);">Elevated</span>
+        <span style="font-size:10px;color:#C84B30;font-weight:700;">High ▲</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:0.5px solid rgba(255,255,255,0.05);">
+        <span style="font-size:12px;color:rgba(240,237,228,0.4);letter-spacing:0.04em;">GPS distance</span>
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:13px;font-weight:700;color:#F0EDE4;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.04em;">812 yds</span><span style="font-size:10px;font-weight:700;color:#C84B30;">↓ 31%</span></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:0.5px solid rgba(255,255,255,0.05);">
+        <span style="font-size:12px;color:rgba(240,237,228,0.4);letter-spacing:0.04em;">Force output</span>
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:13px;font-weight:700;color:#F0EDE4;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.04em;">1,840 N</span><span style="font-size:10px;font-weight:700;color:#C84B30;">↓ 21%</span></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;">
+        <span style="font-size:12px;color:rgba(240,237,228,0.4);letter-spacing:0.04em;">Velocity output</span>
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:13px;font-weight:700;color:#F0EDE4;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.04em;">0.68 m/s</span><span style="font-size:10px;font-weight:700;color:#D4850A;">↓ 14%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#0a0a0a;padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;text-transform:uppercase;letter-spacing:0.04em;color:#F0EDE4;line-height:1;">Decide</div>
+    <div style="font-size:13px;color:rgba(240,237,228,0.5);line-height:1.7;max-width:280px;">Coaches, trainers, scouts, and GMs work from the same source of truth. Every conversation backed by data.</div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="padding:14px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);">
+        <div style="font-size:13px;font-weight:700;color:#F0EDE4;margin-bottom:4px;letter-spacing:0.02em;">Flag risk earlier.</div>
+        <div style="font-size:12px;color:rgba(240,237,228,0.42);line-height:1.6;">Patterns across injury history, load, and testing surface automatically before they become missed games.</div>
+      </div>
+      <div style="padding:14px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);">
+        <div style="font-size:13px;font-weight:700;color:#F0EDE4;margin-bottom:4px;letter-spacing:0.02em;">See what others miss.</div>
+        <div style="font-size:12px;color:rgba(240,237,228,0.42);line-height:1.6;">Data that lived in four different systems now lives in one profile every department can read instantly.</div>
+      </div>
+      <div style="padding:14px 0;">
+        <div style="font-size:13px;font-weight:700;color:#F0EDE4;margin-bottom:4px;letter-spacing:0.02em;">Communicate with clarity.</div>
+        <div style="font-size:12px;color:rgba(240,237,228,0.42);line-height:1.6;">Walk into any personnel or medical conversation backed by a complete, trusted athlete record.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
 </div>
 
 <hr />
@@ -2445,6 +2495,22 @@ function upd(){
   if(cIn>.18&&!aiGo)typeAI();
 }
 upd();
+</script>
+
+<script>
+(function () {
+  const cards = document.querySelectorAll('.how-it-works .htw-card');
+  if (!cards.length) return;
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('htw-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  cards.forEach(function (card) { io.observe(card); });
+})();
 </script>
 
 <script>
